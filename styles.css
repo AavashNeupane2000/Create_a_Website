@@ -1,0 +1,207 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font to Segoe UI */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark gray font color */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    transition: filter 0.5s ease; /* Smooth transition for blur effect */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #333; /* Darker font color for headings */
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: #3498db; /* Blue color for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #333; /* Darker gray on hover */
+}
+
+.blur .section:not(.selected) {
+    filter: blur(5px); /* Apply blur effect to sections except the selected one */
+}
+
+header {
+    background: linear-gradient(120deg, #4caf50, #8bc34a); /* Gradient background */
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+main {
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.section:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #4caf50;
+    text-align: center;
+}
+
+.section img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    z-index: 999; /* Above other content */
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth fade effect */
+}
+
+/* Additional Designs */
+.about-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-content p::selection {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+.about-content img {
+    border: 8px solid #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.about-content img:hover {
+    transform: scale(1.1);
+}
+
+.section.selected {
+    font-size: 32px;
+    background-color: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 70%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+.contact-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; 
+}
+
+.contact-links a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.contact-links img {
+    width: 20px;
+    height: auto;
+    
+}
